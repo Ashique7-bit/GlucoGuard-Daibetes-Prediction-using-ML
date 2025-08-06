@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% block body %}
+       <style>
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.button {
+  background-color:#0E86D4; /* Green */
+  border: none;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+</style>
+<form id="form1" name="form1" method="post" action="Rating_review_search">
+  <table  class="table table-striped" border="1">
+    <tr>
+      <td class="p2" colspan="4">Type
+        <label>
+        <select name="select" class="button4">
+            <option {% if type == 'App' %}selected{% endif %}>App</option>
+            <option {% if type == 'Doctor' %}selected{% endif %}>Doctor</option>
+        </select>
+        <input  type="submit" name="Submit" value="Search"  class="button button4"/>
+      </label></td>
+    </tr>
+
+
+{% if type == 'App' %}
+
+    <tr class="table table-dark">
+
+
+        <td width="46">User</td>
+      <td width="59">Rating</td>
+      <td width="70">Review</td>
+      <td width="68">Date</td>
+    </tr>
+
+      {% for i in val %}
+    <tr>
+
+      <td class="p2">{{ i.USER.first_name }} {{ i.USER.last_name }}</td>
+      <td class="p1">{{ i.rating }}</td>
+        <td class="p1">{{ i.review }}</td>
+      <td class="p1">{{ i.date }}</td>
+
+    </tr>
+             {% endfor %}
+
+{% else %}
+
+
+   <tr class="table table-dark">
+        <td>Doctor</td>
+
+        <td width="46">User</td>
+      <td width="59">Rating</td>
+      <td width="70">Review</td>
+      <td width="68">Date</td>
+    </tr>
+
+      {% for i in val1 %}
+    <tr>
+   <td>{{ i.DOCTOR.firstname }} {{ i.DOCTOR.lastname }}</td>
+
+      <td>{{ i.USER.first_name }} {{ i.USER.last_name }}</td>
+      <td>{{ i.rating }}</td>
+        <td>{{ i.review }}</td>
+      <td>{{ i.date }}</td>
+
+    </tr>
+             {% endfor %}
+  {% endif %}
+
+
+
+  </table>
+</form>
+{% endblock %}

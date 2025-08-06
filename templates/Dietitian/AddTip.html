@@ -1,0 +1,20 @@
+{% extends 'Dietitian/dietitian_index1.html' %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="post" action="add_tipcode">
+  <table class="table table-striped" width="250" border="1">
+    <tr>
+      <td>Tip</td>
+      <td><label>
+            <textarea name="textarea" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="10"><label>
+          <input  type="submit" value="Add" name="submit"  class="btn btn-outline-primary" style="width:70px;height: 30px;"/>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

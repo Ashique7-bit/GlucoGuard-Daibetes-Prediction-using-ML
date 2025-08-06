@@ -1,0 +1,21 @@
+{% extends 'Doctor/doctor_index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/send_reply">
+  <table class="table table-striped" border="1">
+    <tr>
+      <td width="271">Reply
+        <label>
+        <textarea name="textarea" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Send" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

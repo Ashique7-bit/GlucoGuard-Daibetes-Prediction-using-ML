@@ -1,0 +1,61 @@
+{% extends 'Dietitian/dietitian_index1.html' %}
+{% block body %}
+<style>
+th,tr{
+        width:400px;
+    }
+#rcorners2 {
+  border-radius:10px;
+  border: 1px solid #000000;
+  padding: 14px;
+  width: 200px;
+  height: 5px;
+}
+#rcorners3 {
+  border-radius:10px;
+  border: 1px solid #000000;
+  padding: 25px;
+  width: 200px;
+  height: 5px;
+}
+</style>
+<form id="form1" name="form1" method="post" action="add_dietplancode">
+  <table style="width: 800px;height:300px;" border="1" bgcolor="#ffffff " >
+    <tr align="center">
+      <td>BMI</td>
+      <td><label>
+        <input type="text" name="textfield" id="rcorners2" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td>AGE</td>
+      <td><label>
+        <input type="text" name="textfield2" id="rcorners2" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td>Gender</td>
+      <td><label>
+        <input name="textfield3" type="radio" value="Male" checked />
+      Male
+      <input name="textfield3" type="radio" value="Female" />
+      Female</label></td>
+    </tr>
+    <tr align="center">
+      <td>Dietplan</td>
+      <td><label>
+        <textarea name="textarea" id="rcorners3" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary" style="width:70px;height: 30px;" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+{% endblock %}

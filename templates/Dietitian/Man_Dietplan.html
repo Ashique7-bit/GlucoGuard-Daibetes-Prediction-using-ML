@@ -1,0 +1,71 @@
+{% extends 'Dietitian/dietitian_index1.html' %}
+{% block body %}
+      <style>
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+.button {
+  background-color:#0E86D4;
+  border: none;
+  color: white;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+</style>
+
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-striped" border="1">
+    <tr>
+      <td colspan="5">Age
+        <label>
+        <input type="text" name="textfield" id="rcorners3"required/>
+        <input type="submit" name="Submit" value="Seach" class="button button4"/>
+      </label></td>
+    </tr>
+    <tr class="table table-dark">
+      <td >BMI</td>
+      <td >Gender</td>
+      <td >Age</td>
+      <td >Dietplan</td>
+        <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.BMI }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.age }}</td>
+      <td>&nbsp;{{ i.dietplan }}</td>
+        <td ><p><a href="{% url 'edit_dietplan' id=i.id %} " class="btn btn-outline-primary" style="width:70px;height: 30px;">Edit</a></p>
+      <p><a href="delete_dietplan/{{ i.id }}" class="btn btn-outline-danger" style="width:70px;height: 30px;">Delete</a></p></td>
+
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="5" align="center" ><label>
+        <div ><a href="add_dietplan#about" class="btn btn-outline-primary" style="width:70px;height: 30px;">Add</a></div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

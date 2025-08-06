@@ -1,0 +1,33 @@
+{% extends 'Doctor/doctor_index1.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/update_schedule">
+  <table class="table table-striped" border="1">
+    <tr align="center">
+      <td>Date
+        <label>
+        <input type="date" name="textfield" value="{{ dt }}" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td>From Time
+        <label>
+        <input type="time" name="textfield2" value="{{ ft }}" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td>To Time
+        <label>
+        <input type="time" name="textfield3" value="{{ tt }}" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Update" class="btn btn-outline-primary" style="width:70px;height: 30px;"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

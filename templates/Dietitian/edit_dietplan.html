@@ -1,0 +1,43 @@
+{% extends 'Dietitian/dietitian_index1.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/edit_dietplancode">
+  <table class="table table-striped" width="250" border="1">
+    <tr>
+      <td>BMI</td>
+      <td><label>
+        <input type="text" name="textfield"  value="{{ val.BMI }}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>AGE</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ val.age }}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="textfield3" type="radio" value="Male" checked/>
+      Male
+      <input name="textfield3" type="radio" value="Female" />
+      Female</label></td>
+    </tr>
+    <tr>
+      <td>Dietplan</td>
+      <td><label>
+        <textarea name="textarea" required>{{ val.dietplan }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><label>
+        <div >
+          <input type="submit" name="Submit" value="Edit" class="btn btn-outline-primary" style="width:70px;height: 30px;"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+{% endblock %}
