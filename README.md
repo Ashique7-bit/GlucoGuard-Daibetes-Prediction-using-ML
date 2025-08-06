@@ -84,7 +84,7 @@ GlucoGuard is a healthcare-focused application designed to predict the risk of d
 **Muhammed Ashique U K**  
 Bachelor of Computer Applications (BCA)  
 Kannur University – KBM Govt. College, Thalassery  
-Email: *[Add your email if needed]*  
+Email: *ashiqueuk123nyd@gmail.com*  
 GitHub: [github.com/YourUsername](https://github.com/Ashique7-bit)
 
 ---
